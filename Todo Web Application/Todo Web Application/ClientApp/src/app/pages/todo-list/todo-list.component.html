@@ -1,0 +1,26 @@
+<h1 id="tableLabel">Todo Transaction</h1>
+
+
+<p *ngIf="!todos"><em>Loading...</em></p>
+
+<form [formGroup]="addTaskForm" (ngSubmit)="addTask()">
+        <div class="form-group">
+            <label for="description">Todo Transaction</label>
+            <input type="text" formControlName="description" class="form-control" placeholder="Enter task here"/>
+        </div>
+</form>
+<button (click)="clearCompletedTodoTransaction()">Clear Completed</button>
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="todos">
+  <thead>
+    <tr>
+      <th class="col-description">Description</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let todo of todos">
+      <td (click)="toggleStatus(todo.id)" [ngClass]="{'todo-completed': todo.isCompleted}">{{ todo.description }}</td>
+      <td (click)="deleteTodoTransaction(todo.id)" class="col-action" [ngClass]="{'todo-completed': todo.isCompleted}"><strong class="delete-icon">X</strong></td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,19 @@
+<h1 id="tableLabel">Users</h1>
+
+
+<p *ngIf="!users"><em>Loading...</em></p>
+<button (click)="openAddUserModal()">Add User</button>
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="users">
+  <thead>
+    <tr>
+      <th>Full Name</th>
+      <th>User Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.fullName }}</td>
+      <td>{{ user.userName }}</td>
+    </tr>
+  </tbody>
+</table>

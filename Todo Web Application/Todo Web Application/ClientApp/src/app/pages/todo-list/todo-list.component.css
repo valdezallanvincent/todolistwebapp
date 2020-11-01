@@ -1,0 +1,13 @@
+.todo-completed{
+    background-color: green;
+}
+.col-description{
+    width:90%
+}
+.col-action{
+    color:red;
+    text-align: center;
+}
+.delete-icon{
+    cursor: pointer;
+}
