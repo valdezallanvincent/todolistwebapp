@@ -15,8 +15,8 @@ namespace TodoWebApplication.DbModel
             new UserEntity()
             {
                 FullName = "Allan Valdez",
-                Password = Encrypt("admin123"),
-                UserName = "alvin",
+                Password = Encrypt("admin"),
+                UserName = "admin",
                 UserRoles = new List<UserRoleEntity>()
                 {
                     new UserRoleEntity()
